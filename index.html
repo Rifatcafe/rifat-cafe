@@ -47,7 +47,9 @@ WhatsApp Order
 
 <p>Price : ৳100</p>
 
-<button>Add To Cart</button>
+<button onclick="addToCart('Chicken Biryani',100)">
+Add To Cart
+</button>
 
 </div>
 
@@ -57,27 +59,17 @@ WhatsApp Order
 
 <p>Price : ৳100</p>
 
-<button>Add To Cart</button>
+<button onclick="addToCart('Chicken Khichuri',100)">
+Add To Cart
+</button>
 
-</div>
+<button onclick="addToCart('Morog Polao',150)">
+Add To Cart
+</button>
 
-<div class="card">
-
-<h3>🍛 Morog Polao</h3>
-
-<p>Price : ৳150</p>
-
-<button>Add To Cart</button>
-
-</div>
-
-<div class="card">
-
-<h3>🥩 Beef Biryani</h3>
-
-<p>Price : ৳150</p>
-
-<button>Add To Cart</button>
+<button onclick="addToCart('Beef Biryani',150)">
+Add To Cart
+</button>
 
 </div>
 
@@ -92,6 +84,18 @@ WhatsApp Order
 </footer>
 
 <script src="script.js"></script>
+<div class="cart">
 
+<h2>🛒 আপনার অর্ডার</h2>
+
+<ul id="cart-items"></ul>
+
+<h3 id="total">মোট = ৳0</h3>
+
+<button onclick="sendWhatsApp()">
+WhatsApp এ অর্ডার করুন
+</button>
+
+</div>
 </body>
 </html>
