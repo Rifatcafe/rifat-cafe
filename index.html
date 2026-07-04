@@ -1,109 +1,393 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rifat Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifat Cafe - Home Cooked Delicious Food</title>
+    <style>
+        :root {
+            --primary-color: #3d1c06;
+            --secondary-color: #ff9100;
+            --bg-light: #fffcf4;
+            --text-dark: #333;
+        }
 
-<link rel="stylesheet" href="style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
+        /* Hero Header Section */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 8px solid var(--secondary-color);
+        }
+
+        .logo-area h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .logo-area p {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tagline h2 {
+            font-size: 2.5rem;
+            margin: 20px 0 10px;
+            color: #fff;
+        }
+
+        .tagline p {
+            font-size: 1.4rem;
+            color: #f4f4f4;
+            background-color: rgba(255, 145, 0, 0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Main Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Menu Section */
+        .menu-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .menu-title::before, .menu-title::after {
+            content: "✨";
+            margin: 0 10px;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #f0e6d2;
+            transition: transform 0.2s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .menu-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .menu-details p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .price-badge {
+            background: radial-gradient(circle, #ff9100, #e65c00);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            width: 70px;
+            height: 70px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed white;
+            box-shadow: 0 0 0 4px #ff9100;
+            margin-left: 10px;
+        }
+
+        /* Sidebar Info Section */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 8px;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box ul li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        /* WhatsApp Order Button */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebd58;
+        }
+
+        /* Features Footer Row */
+        .features {
+            background-color: #fff;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer h2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        footer .thankyou {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-area">
+            <h1>Rifat Cafe</h1>
+            <p>Fresh Food, Happy Mood</p>
+        </div>
+        <div class="tagline">
+            <h2>Home Cooked Delicious Food</h2>
+            <p>ঘরের স্বাদ, সবার জন্য ❤️</p>
+        </div>
+    </header>
 
-<div class="logo">
-<h1>Rifat Cafe</h1>
-<p>ঘরের স্বাদ, সবার জন্য</p>
-</div>
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Left Side: Menu -->
+        <main>
+            <h2 class="menu-title">আমাদের মেনু</h2>
+            <div class="menu-list">
+                
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=200&q=80" alt="চিকেন বিরিয়ানি" class="menu-img">
+                    <div class="menu-details">
+                        <h3>চিকেন বিরিয়ানি</h3>
+                        <p>সুগন্ধি চালের বিরিয়ানি, নরম চিকেন ও ঘরোয়া মশলায় তৈরি।</p>
+                    </div>
+                    <div class="price-badge">৳১০০</div>
+                </div>
 
-<a class="order-btn"
-href="https://wa.me/8801322996072">
-WhatsApp Order
-</a>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=200&q=80" alt="চিকেন খিচুড়ি" class="menu-img">
+                    <div class="menu-details">
+                        <h3>চিকেন খিচুড়ি</h3>
+                        <p>মজাদার দেশি খিচুড়ি সাথে চিকেনের স্বাদে ভরপুর।</p>
+                    </div>
+                    <div class="price-badge">৳১০০</div>
+                </div>
 
-</header>
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=200&q=80" alt="মোরগ পোলাও" class="menu-img">
+                    <div class="menu-details">
+                        <h3>মোরগ পোলাও</h3>
+                        <p>স্পেশাল মোরগ পোলাও, ঘরোয়া স্বাদে পারফেক্ট।</p>
+                    </div>
+                    <div class="price-badge">৳১৫০</div>
+                </div>
 
-<section class="hero">
+                <!-- Item 4 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=200&q=80" alt="বিফ বিরিয়ানি" class="menu-img">
+                    <div class="menu-details">
+                        <h3>বিফ বিরিয়ানি</h3>
+                        <p>সুগন্ধি চালের বিরিয়ানি, নরম গরুর মাংস ও স্পেশাল মশলা।</p>
+                    </div>
+                    <div class="price-badge">৳১৫০</div>
+                </div>
 
-<h2>Fresh & Homemade Food</h2>
+            </div>
+        </main>
 
-<p>Healthy • Hygienic • Delicious</p>
+        <!-- Right Side: Ordering Info & Sidebar -->
+        <aside class="sidebar">
+            
+            <!-- How to Order -->
+            <div class="info-box">
+                <h3>📋 কিভাবে অর্ডার করবেন?</h3>
+                <ul>
+                    <li>📱 QR কোড স্ক্যান করুন</li>
+                    <li>🛒 মেনু দেখুন ও পছন্দের খাবার বেছে নিন</li>
+                    <li>💬 অর্ডার করুন, আমরা হোয়াটসঅ্যাপে পাবো</li>
+                </ul>
+            </div>
 
-</section>
+            <!-- Delivery Area -->
+            <div class="info-box">
+                <h3>📍 ডেলিভারি এলাকা</h3>
+                <p><strong>মাওনা চৌরাস্তা, শ্রীপুর</strong> ও আশেপাশের এলাকা</p>
+            </div>
 
-<section class="menu">
+            <!-- WhatsApp Action Call -->
+            <a href="https://wa.me/8801322996072" class="whatsapp-btn" target="_blank">
+                <span>💬 অর্ডার করতে WhatsApp করুন</span>
+                <br>
+                <span style="font-size: 1.4rem;">01322996072</span>
+            </a>
 
-<h2>Our Menu</h2>
+        </aside>
 
-<div class="card">
+    </div>
 
-<h3>🍗 Chicken Biryani</h3>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">🍳</div>
+                <h4>তাজা ও পরিচ্ছন্ন খাবার</h4>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌿</div>
+                <h4>ঘরোয়া স্বাদে স্বাস্থ্যকর খাবার</h4>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🏍️</div>
+                <h4>দ্রুত ডেলিভারি নির্ভরযোগ্য সেবা</h4>
+            </div>
+        </div>
+    </section>
 
-<p>Price : ৳100</p>
+    <!-- Footer Section -->
+    <footer>
+        <div class="thankyou">Thank You! ❤️</div>
+        <h2>Rifat Cafe ❤️</h2>
+        <p>Fresh Food, Happy Mood</p>
+    </footer>
 
-<button onclick="addToCart('Chicken Biryani',100)">
-Add To Cart
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>🍲 Chicken Khichuri</h3>
-
-<p>Price : ৳100</p>
-  <div class="card">
-
-<button onclick="addToCart('Chicken Khichuri',100)">
-Add To Cart
-</button
-<div class="card">
-
-<h3>🍲  মোরগ পোলাও</h3>
-
-<p>Price : ৳100</p>
-<button onclick="addToCart('Morog Polao',150)">
-Add To Cart
-</button><div class="card">
-
-<h3>🍲 Beef Biryani</h3>
-
-<p>Price : ৳100</p>
-
-<button onclick="addToCart('Beef Biryani',150)">
-Add To Cart
-</button>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>Delivery Area : Mawna Chowrasta, Sreepur</p>
-
-<p>WhatsApp : 01322996072</p>
-
-</footer>
-
-<script src="script.js"></script>
-<div class="cart">
-
-<h2>🛒 আপনার অর্ডার</h2>
-
-<ul id="cart-items"></ul>
-
-<h3 id="total">মোট = ৳0</h3>
-
-<button onclick="sendWhatsApp()">
-WhatsApp এ অর্ডার করুন
-</button>
-
-</div>
 </body>
 </html>
