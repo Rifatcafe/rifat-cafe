@@ -95,7 +95,7 @@ whatsappOrderBtn.addEventListener('click', () => {
     
     text += `-----------------------------------\n`;
     text += `*সর্বমোট বিল:* ৳${total}\n\n`;
-    text += `कृपया, আমার অর্ডারটি কনফার্ম করুন এবং ডেলিভারি প্রসেস জানান।`;
+    text += `অনুগ্রহ করে আমার অর্ডারটি কনফার্ম করুন এবং ডেলিভারি প্রসেস জানান।`;
 
     // Encode text for URL
     const encodedText = encodeURIComponent(text);
