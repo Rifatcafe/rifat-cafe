@@ -41,7 +41,9 @@
                 
                 <!-- Item 1 -->
                 <div class="menu-item" data-id="1" data-name="চিকেন বিরিয়ানি" data-price="100">
-                    <div class="item-img-placeholder"><i class="fa-solid fa-bowl-rice"></i></div>
+                    <div class="item-img-placeholder">
+                        <img src="biryani.jpg" alt="চিকেন বিরিয়ানি" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover;">
+                    </div>
                     <div class="item-info">
                         <h3>চিকেন বিরিয়ানি</h3>
                         <p>সুগন্ধি চালের বিরিয়ানি, নরম চিকেন ও ঘরোয়া স্পেশাল মশলায় তৈরি।</p>
@@ -54,7 +56,9 @@
 
                 <!-- Item 2 -->
                 <div class="menu-item" data-id="2" data-name="চিকেন খিচুড়ি" data-price="100">
-                    <div class="item-img-placeholder"><i class="fa-solid fa-bowl-food"></i></div>
+                    <div class="item-img-placeholder">
+                        <img src="khichuri.jpg" alt="চিকেন খিচুড়ি" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover;">
+                    </div>
                     <div class="item-info">
                         <h3>চিকেন খিচুড়ি</h3>
                         <p>মজাদার খাঁটি দেশি খিচুড়ি, সাথে রসালো চিকেনের স্বাদে ভরপুর।</p>
@@ -67,10 +71,13 @@
 
                 <!-- Item 3 -->
                 <div class="menu-item" data-id="3" data-name="মোরগ পোলাও" data-price="150">
-                    <div class="item-img-placeholder"><i class="fa-solid fa-plate-wheat"></i></div>
+                    <div class="item-img-placeholder">
+                        <!-- এখানে আপনার আপলোড করা ছবি সফলভাবে যুক্ত করা হলো -->
+                        <img src="Murogpulau.png" alt="মোরগ পোলাও" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover;">
+                    </div>
                     <div class="item-info">
                         <h3>মোরগ পোলাও</h3>
-                        <p>ঐতিহ্যবাহী স্পেশাল মোরগ পোলাও, পারফেক্ট ঘরোয়া স্বাদের নিশ্চয়তা।</p>
+                        <p>ঐতিহ্যবাহী স্পেশাল মোরগ পোলাও, পারфেক্ট ঘরোয়া স্বাদের নিশ্চয়তা।</p>
                         <div class="price-row">
                             <span class="price">৳১৫০</span>
                             <button class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
@@ -80,7 +87,9 @@
 
                 <!-- Item 4 -->
                 <div class="menu-item" data-id="4" data-name="বিফ বিরিয়ানি" data-price="150">
-                    <div class="item-img-placeholder"><i class="fa-solid fa-mortar-pestle"></i></div>
+                    <div class="item-img-placeholder">
+                        <img src="beef.jpg" alt="বিফ বিরিয়ানি" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover;">
+                    </div>
                     <div class="item-info">
                         <h3>বিফ বিরিয়ানি</h3>
                         <p>প্রিমিয়াম সুগন্ধি চাল, নরম তুলতুলে গরুর মাংস ও সিক্রেট মশলার জাদু।</p>
@@ -88,60 +97,4 @@
                             <span class="price">৳১৫০</span>
                             <button class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <!-- Sidebar (Right Side): Cart & QR -->
-        <aside class="sidebar">
-            
-            <!-- Cart Box -->
-            <div class="sidebar-box cart-box">
-                <h3><i class="fa-solid fa-basket-shopping gold-text"></i> আপনার কার্ট (Cart)</h3>
-                <div id="cart-items">
-                    <p class="empty-cart-msg">কার্ট খালি আছে। খাবার যোগ করুন।</p>
-                </div>
-                <div class="cart-summary">
-                    <div class="total-row">
-                        <span>মোট বিল:</span>
-                        <span id="cart-total">৳০</span>
-                    </div>
-                    <!-- Order Button -->
-                    <button id="whatsapp-order-btn" class="whatsapp-btn" disabled>
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp-এ অর্ডার করুন
-                    </button>
-                </div>
-            </div>
-
-            <!-- QR Code & Info -->
-            <div class="sidebar-box info-box">
-                <h3><i class="fa-solid fa-qrcode gold-text"></i> QR কোড স্ক্যান করুন</h3>
-                <!-- Placeholder QR using online API (It dynamically generates a QR for demo) -->
-                <div class="qr-container">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com" alt="QR Code" class="qr-code">
-                    <p class="qr-text">মেনু দেখতে ও সরাসরি অর্ডার করতে স্ক্যান করুন</p>
-                </div>
-                <hr class="gold-divider">
-                <p class="delivery-location">
-                    <i class="fa-solid fa-location-dot gold-text"></i> <strong>ডেলিভারি এলাকা:</strong><br>
-                    মাওনা চৌরাস্তা, শ্রীপুর ও আশেপাশের এলাকা।
-                </p>
-            </div>
-
-        </aside>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-thanks">Thank You! ❤️</div>
-        <h2 class="gold-text">Rifat Cafe</h2>
-        <p>Fresh Food, Happy Mood</p>
-        <p class="copyright">&copy; 2026 Rifat Cafe. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+   
