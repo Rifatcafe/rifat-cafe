@@ -72,12 +72,11 @@
                 <!-- Item 3 -->
                 <div class="menu-item" data-id="3" data-name="মোরগ পোলাও" data-price="150">
                     <div class="item-img-placeholder">
-                        <!-- এখানে আপনার আপলোড করা ছবি সফলভাবে যুক্ত করা হলো -->
                         <img src="Murogpulau.png" alt="মোরগ পোলাও" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover;">
                     </div>
                     <div class="item-info">
                         <h3>মোরগ পোলাও</h3>
-                        <p>ঐতিহ্যবাহী স্পেশাল মোরগ পোলাও, পারфেক্ট ঘরোয়া স্বাদের নিশ্চয়তা।</p>
+                        <p>ঐতিহ্যবাহী স্পেশাল মোরগ পোলাও, পারফেক্ট ঘরোয়া স্বাদের নিশ্চয়তা।</p>
                         <div class="price-row">
                             <span class="price">৳১৫০</span>
                             <button class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
@@ -97,4 +96,58 @@
                             <span class="price">৳১৫০</span>
                             <button class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
                         </div>
-   
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Sidebar (Right Side): Cart & QR -->
+        <aside class="sidebar">
+            
+            <!-- Cart Box -->
+            <div class="sidebar-box cart-box">
+                <h3><i class="fa-solid fa-basket-shopping gold-text"></i> আপনার কার্ট (Cart)</h3>
+                <div id="cart-items">
+                    <p class="empty-cart-msg">কার্ট খালি আছে। খাবার যোগ করুন।</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="total-row">
+                        <span>মোট বিল:</span>
+                        <span id="cart-total">৳০</span>
+                    </div>
+                    <!-- এখানে আইডি বদলে ঠিক করে দেওয়া হয়েছে -->
+                    <button class="checkout-btn" id="whatsapp-order-btn"><i class="fa-solid fa-square-check"></i> অর্ডার কনফার্ম করুন</button>
+                </div>
+            </div>
+
+            <!-- QR Box -->
+            <div class="sidebar-box qr-box">
+                <h3><i class="fa-solid fa-qrcode gold-text"></i> QR কোড স্ক্যান করুন</h3>
+                <div class="qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rifatcafe.github.io/rifat-cafe/" alt="QR Code">
+                    <p>মেনু দেখতে ও সরাসরি অর্ডার করতে স্ক্যান করুন</p>
+                </div>
+                <hr>
+                <p class="delivery-info">
+                    <i class="fa-solid fa-location-dot gold-text"></i> <strong>ডেলিভারি এলাকা:</strong><br>
+                    মাওনা চৌরাস্তা, শ্রীপুর ও আশেপাশের এলাকা।
+                </p>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-heart">Thank You! ❤️</div>
+        <h2>Rifat Cafe</h2>
+        <p class="footer-slogan">Fresh Food, Happy Mood</p>
+        <p class="copyright">&copy; 2026 Rifat Cafe. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script file connection -->
+    <script src="script.js"></script>
+</body>
+</html>
